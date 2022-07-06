@@ -39,17 +39,18 @@ function number (){
 let counter = 0;
 function addCounter() {
   const valueNumber = input.value;
-  if (parseInt(valueNumber) !== parseInt(numberRandom)) {
+  if (parseInt(valueNumber) !== (numberRandom)) {
     counter += 1;
     tryNumber.innerHTML = `Número de intentos: ${counter}`;
   }
   return counter;
 }
 
+
 function handleClick(ev) {
 ev.preventDefault();
 number();
-total();
+
 addCounter();
 
     }
