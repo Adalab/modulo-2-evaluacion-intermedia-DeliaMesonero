@@ -1,10 +1,8 @@
 'use strict'
-
-
 const input = document.querySelector('.js-input');
 const btn = document.querySelector('.js-btn');
-const userNumber = document.querySelector('.js-clue');
-let number = document.querySelector('.js-try');
+const tipsElement = document.querySelector('.js-clue');
+let numberParagraph = document.querySelector('.js-try');
 
 
 
@@ -14,31 +12,30 @@ const getRandomNumber = (max) => {
     const numberRandom = getRandomNumber(100);
     console.log(numberRandom);
 
+function render(message){
+    tipsElement.innerHTML = message;
+}
 function number (){
     const inputValue = parseInt (input.value);
     if( inputValue === numberRandom) {
-        userNumber.innerHTML = 'Has ganado campeona!!';
+        render('Has ganado campeona!!');
     } else if ( inputValue < 1 || inputValue > 100) {
-        userNumber.innerHTML = 'El número debe estar entre 1 y 100';
+        render ('El número debe estar entre 1 y 100');
     } else if ( inputValue < numberRandom) {
-        userNumber.innerHTML ='Demasiado bajo';
+        render('Demasiado bajo');
 
     } else if( inputValue > numberRandom){
-        userNumber.innerHTML = 'Demasiado alto';
+        render('Demasiado alto');
 
     }
 }
-
-
-
-
 
 let counter = 0;
 function addCounter() {
   const valueNumber = input.value;
   if (parseInt(valueNumber) !== (numberRandom)) {
     counter += 1;
-    number.innerHTML = `Número de intentos: ${counter}`;
+    numberParagraph.innerHTML = `Número de intentos: ${counter}`;
   }
   return counter;
 }
