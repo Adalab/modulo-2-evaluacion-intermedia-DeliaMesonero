@@ -4,8 +4,6 @@ const btn = document.querySelector('.js-btn');
 const tipsElement = document.querySelector('.js-clue');
 let numberParagraph = document.querySelector('.js-try');
 
-
-
 const getRandomNumber = (max) => {
     return Math.ceil(Math.random() * max);
     };
@@ -26,10 +24,8 @@ function number (){
 
     } else if( inputValue > numberRandom){
         render('Demasiado alto');
-
     }
 }
-
 let counter = 0;
 function addCounter() {
   const valueNumber = input.value;
@@ -40,13 +36,11 @@ function addCounter() {
   return counter;
 }
 
-
 function handleClick(ev) {
 ev.preventDefault();
 number();
 
 addCounter();
-
     }
 
 btn.addEventListener('click', handleClick);
